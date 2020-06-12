@@ -20,10 +20,17 @@ const example = window.example
         console.log('before each called')
     })
 
+    // function is run after each test
+    afterEach(()=>{
+        console.log('after each called')
+    })
+
 // describe gives a description of what the test does
 describe('our example module', () => {
     test('should be defined', ()=>{
-        expect(example).toBeDefined()
+        const name = 'Mark'
+        const expected = example.hello(name)
+        expect(expected).toEqual('Hello Mark')
     })
     test('should be an object', ()=>{
         expect(typeof example).toEqual('object')

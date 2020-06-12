@@ -1,1 +1,3 @@
-window.example = {}
+window.example = {
+    hello: name => `Hello ${name}`
+}
